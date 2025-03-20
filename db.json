@@ -1,0 +1,39 @@
+{
+    "movies": [
+      {
+        "id": 1,
+        "title": "Inception",
+        "year": "2010",
+        "genre": "Sci-Fi",
+        "poster": "https://image-link.jpg"
+      },
+      {
+        "id": 2,
+        "title": "The Dark Knight",
+        "year": "2008",
+        "genre": "Action",
+        "poster": "https://image-link.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Interstellar",
+        "year": "2014",
+        "genre": "Sci-Fi",
+        "poster": "https://image-link.jpg"
+      },
+      {
+        "id":4,
+        "title":"Project x",
+        "year":"2012",
+        "genre": "Comedy",
+        "poster":""
+      },
+      {
+        "id": 5,
+        "title": "Avenger: Endgame",
+        "year": "2019",
+        "genre": "Action/Sci-Fi",
+        "poster": ""
+      }
+    ]
+  }
