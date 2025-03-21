@@ -3,25 +3,34 @@ document.addEventListener('DOMContentLoaded', () => {
     getMovies()
 });
 
-function getMovies(){
-    const ul = document.getElementById('movie-list');
-    ul.innerHTML = ""; 
-    fetch('http://localhost:3000/movies')
-  .then(res => res.json())
-  .then(data =>{
-    data.forEach(movie => {
-        ul.innerHTML += `
-            
-                <h3>${movie.title} (${movie.year})</h3>
-                <p>Genre: ${movie.genre}</p>
-                <img src="${movie.poster}" width="100">
-            
-        `;
+let allMovies = [];
 
- console.log(movie)
+function getMovies(){
+const movieList = document.getElementById('movie-list');
+movieList.innerHTML = ""; 
+fetch('http://localhost:3000/movies')
+.then(res => res.json())
+.then(data =>{
+    data.forEach(movie => {
+        movieList.innerHTML += `
+            
+          <ul>  <h3>${movie.title} (${movie.year})</h3>
+            <p>Genre: ${movie.genre}</p>
+            <img src="${movie.poster}" width="100">
+            <button class="add-watchlist-btn" data-id="${movie.id}">Add to Watchlist</button>
+            </ul>
+        `
+        console.log(movie);
     })
-})
-}
+});
+ movieList.addEventListener('click',(e)=>{
+    if (e.target.classList.contains('add-watchlist-btn')){
+        const movieId = e.target.dataset.id;
+        console.log('clicked movie:', movieId)
+    }
+  })
+
+ }
 
 //const ShowMovies = (){
     //const movieList = document.getElementById('movie-list')
