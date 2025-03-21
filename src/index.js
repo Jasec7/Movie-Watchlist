@@ -11,6 +11,7 @@ movieList.innerHTML = "";
 fetch('http://localhost:3000/movies')
 .then(res => res.json())
 .then(data =>{
+    allMovies = data;
     data.forEach(movie => {
         movieList.innerHTML += `
             
@@ -23,18 +24,26 @@ fetch('http://localhost:3000/movies')
         console.log(movie);
     })
 });
- movieList.addEventListener('click',(e)=>{
+ 
+movieList.addEventListener('click',(e)=>{
     if (e.target.classList.contains('add-watchlist-btn')){
         const movieId = e.target.dataset.id;
-        console.log('clicked movie:', movieId)
+        console.log('clicked movie:', movieId);
+        const selectedMovie = allMovies.find(movie => movie.id == movieId)
+    const block = document.createElement('div');
+        block.innerHTML = `
+         <ul> ${selectedMovie.title}
+               <img src="${selectedMovie.poster}" width="100">
+               </ul>`
+               
+               console.log(selectedMovie.title)
     }
+    
   })
 
- }
+}
 
-//const ShowMovies = (){
-    //const movieList = document.getElementById('movie-list')
-    //movieList.forEach(moviez)
+
 
 
 
