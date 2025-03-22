@@ -40,7 +40,8 @@ movieList.addEventListener('click',(e)=>{
         const block = document.createElement('div');
         block.id = `watchlist-item-${movieId}` 
         block.innerHTML = `
-         <ul> ${selectedMovie.title}
+         <ul> 
+             ${selectedMovie.title}
                <img src="${selectedMovie.poster}" width="100">
                </ul>`;
                
