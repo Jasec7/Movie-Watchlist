@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('here we go')
+    console.log('Movie')
     getMovies()
 });
 
@@ -15,7 +15,8 @@ fetch('http://localhost:3000/movies')
     data.forEach(movie => {
         movieList.innerHTML += `
             
-          <ul>  <h3>${movie.title} (${movie.year})</h3>
+          <ul>  
+            <h4>${movie.title} (${movie.year})</h4>
             <p>Genre: ${movie.genre}</p>
             <img src="${movie.poster}" width="100">
             <button class="add-watchlist-btn" data-id="${movie.id}">Add to Watchlist</button>
@@ -29,14 +30,23 @@ movieList.addEventListener('click',(e)=>{
     if (e.target.classList.contains('add-watchlist-btn')){
         const movieId = e.target.dataset.id;
         console.log('clicked movie:', movieId);
+        const alreadyAdded = document.getElementById(`watchlist-item-${movieId}`);
+        if(alreadyAdded){
+            console.log(`Movie ${movieId} already in watchlist.`);
+            return;
+        }
+          
         const selectedMovie = allMovies.find(movie => movie.id == movieId)
-    const block = document.createElement('div');
+        const block = document.createElement('div');
+        block.id = `watchlist-item-${movieId}` 
         block.innerHTML = `
          <ul> ${selectedMovie.title}
                <img src="${selectedMovie.poster}" width="100">
-               </ul>`
+               </ul>`;
                
-               console.log(selectedMovie.title)
+               console.log(selectedMovie.title);
+
+    document.getElementById('watchlist').appendChild(block)
     }
     
   })
