@@ -60,6 +60,14 @@ movieList.addEventListener('click',(e)=>{
         } 
 
 })
+
+const search = document.getElementById('search-input')
+search.addEventListener('input', (e) =>{
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredMovies = allMovies.filter(movie => 
+        movie.title.toLowerCase().includes(searchTerm));
+})
+
 }
 
 
