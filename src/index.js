@@ -43,9 +43,10 @@ movieList.addEventListener('click',(e)=>{
          <ul> 
              ${selectedMovie.title}
                <img src="${selectedMovie.poster}" width="100">
+               <button class="remove-watchlist-btn">Remove</button>
                </ul>`;
                
-               console.log(selectedMovie.title);
+            console.log(selectedMovie.title);
 
     document.getElementById('watchlist').appendChild(block)
     }
