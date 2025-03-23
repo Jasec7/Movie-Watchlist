@@ -49,11 +49,20 @@ movieList.addEventListener('click',(e)=>{
             console.log(selectedMovie.title);
 
     document.getElementById('watchlist').appendChild(block)
-    }
-    
-  })
+    };
 
+    }); 
+    
+    document.getElementById('watchlist').addEventListener('click', (e) => {
+        if(e.target.classList.contains('remove-watchlist-btn')) {
+        
+            e.target.closest('div').remove(); 
+        } 
+
+})
 }
+
+
 
 
 
