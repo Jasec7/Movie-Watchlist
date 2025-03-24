@@ -41,10 +41,11 @@ movieList.addEventListener('click',(e)=>{
         block.id = `watchlist-item-${movieId}` 
         block.innerHTML = `
          <ul> 
-             ${selectedMovie.title}
-               <img src="${selectedMovie.poster}" width="100">
-               <button class="remove-watchlist-btn">Remove</button>
-               </ul>`;
+            <h4>${selectedMovie.title}</h4>
+            <img src="${selectedMovie.poster}" width="100">
+            <button class="remove-watchlist-btn">Remove</button>
+            </ul>
+            `
                
             console.log(selectedMovie.title);
 
@@ -65,7 +66,7 @@ const search = document.getElementById('search-input')
 search.addEventListener('input', (e) =>{
     const searchTerm = e.target.value.toLowerCase();
     const filteredMovies = allMovies.filter(movie => 
-        movie.title.toLowerCase().includes(searchTerm));
+     movie.title.toLowerCase().includes(searchTerm));
 })
 
 }
