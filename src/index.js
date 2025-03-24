@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Movie')
     getMovies()
+
 });
 
 let allMovies = [];
@@ -12,19 +13,10 @@ fetch('http://localhost:3000/movies')
 .then(res => res.json())
 .then(data =>{
     allMovies = data;
-    data.forEach(movie => {
-        movieList.innerHTML += `
-            
-          <ul>  
-            <h4>${movie.title} (${movie.year})</h4>
-            <p>Genre: ${movie.genre}</p>
-            <img src="${movie.poster}" width="100">
-            <button class="add-watchlist-btn" data-id="${movie.id}">Add to Watchlist</button>
-            </ul>
-        `
-        console.log(movie);
+    renderedMovies(allMovies)
+        console.log(allMovies);
     })
-});
+
  
 movieList.addEventListener('click',(e)=>{
     if (e.target.classList.contains('add-watchlist-btn')){
@@ -46,8 +38,7 @@ movieList.addEventListener('click',(e)=>{
             <button class="remove-watchlist-btn">Remove</button>
             </ul>
             `
-               
-            console.log(selectedMovie.title);
+               console.log(selectedMovie.title);
 
     document.getElementById('watchlist').appendChild(block)
     };
@@ -56,18 +47,36 @@ movieList.addEventListener('click',(e)=>{
     
     document.getElementById('watchlist').addEventListener('click', (e) => {
         if(e.target.classList.contains('remove-watchlist-btn')) {
-        
-            e.target.closest('div').remove(); 
+           e.target.closest('div').remove(); 
         } 
 
 })
 
-const search = document.getElementById('search-input')
-search.addEventListener('input', (e) =>{
+    const search = document.getElementById('search-input')
+    search.addEventListener('input', (e) =>{
     const searchTerm = e.target.value.toLowerCase();
+
     const filteredMovies = allMovies.filter(movie => 
      movie.title.toLowerCase().includes(searchTerm));
+     renderedMovies(filteredMovies);
+
 })
+
+const renderedMovies = (movieArray) =>{
+    const movieList = document.getElementById('movie-list');
+    movieList.innerHTML = "";
+    movieArray.forEach(movie =>{
+        movieList.innerHTML +=`
+        <div>
+        <h3>${movie.title} (${movie.year})</h3>
+        <p>Genre: ${movie.genre}</p>
+        <img src="${movie.poster}" width="100">
+        <button class="add-watchlist-btn" data-id="${movie.id}">Add to Watchlist</button>
+      </div>
+        `
+    })
+}
+
 
 }
 
