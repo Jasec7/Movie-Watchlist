@@ -13,11 +13,10 @@ fetch('http://localhost:3000/movies')
 .then(res => res.json())
 .then(data =>{
     allMovies = data;
-    renderedMovies(allMovies)
+    renderMovies(allMovies)
         console.log(allMovies);
     })
 
- 
 movieList.addEventListener('click',(e)=>{
     if (e.target.classList.contains('add-watchlist-btn')){
         const movieId = e.target.dataset.id;
@@ -58,11 +57,12 @@ movieList.addEventListener('click',(e)=>{
 
     const filteredMovies = allMovies.filter(movie => 
      movie.title.toLowerCase().includes(searchTerm));
-     renderedMovies(filteredMovies);
+     renderMovies(filteredMovies);
 
-})
+    })
 
-const renderedMovies = (movieArray) =>{
+}
+const renderMovies = (movieArray) =>{
     const movieList = document.getElementById('movie-list');
     movieList.innerHTML = "";
     movieArray.forEach(movie =>{
@@ -75,9 +75,6 @@ const renderedMovies = (movieArray) =>{
       </div>
         `
     })
-}
-
-
 }
 
 
