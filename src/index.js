@@ -24,7 +24,7 @@ fetch('http://localhost:3000/movies')
     const filteredMovies = allMovies.filter(movie => 
      movie.title.toLowerCase().includes(searchTerm));
      renderMovies(filteredMovies);
-})
+});
 
 };
 const renderMovies = (movieArray) =>{
@@ -49,7 +49,7 @@ const renderMovies = (movieArray) =>{
             if(alreadyAdded){
                 console.log(`Movie ${movieId} already in watchlist.`);
                 return;
-            }
+        }
               
             const selectedMovie = allMovies.find(movie => movie.id == movieId)
             const block = document.createElement('div');
