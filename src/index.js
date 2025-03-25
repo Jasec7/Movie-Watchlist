@@ -24,7 +24,7 @@ fetch('http://localhost:3000/movies')
     const filteredMovies = allMovies.filter(movie => 
      movie.title.toLowerCase().includes(searchTerm));
      renderMovies(filteredMovies);
-});
+  });
 
 };
 const renderMovies = (movieArray) =>{
@@ -39,7 +39,7 @@ const renderMovies = (movieArray) =>{
         <button class="add-watchlist-btn" data-id="${movie.id}">Add to Watchlist</button>
       </div>
         `
-    })
+ })
 
     movieList.addEventListener('click',(e)=>{
         if (e.target.classList.contains('add-watchlist-btn')){
