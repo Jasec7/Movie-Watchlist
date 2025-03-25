@@ -23,3 +23,6 @@ The project utilizes json-server to serve local API data and demonstrates strong
 - Clone this repository.
 - Run json-server --watch db.json in the terminal to start the local server.
 - Open index.html in your browser.
+
+## License
+This project is licensed under the MIT License.
