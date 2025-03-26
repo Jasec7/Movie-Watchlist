@@ -26,3 +26,6 @@ The project utilizes json-server to serve local API data and demonstrates strong
 
 ## License
 This project is licensed under the MIT License.
+
+## Contributing
+This project was created and maintained by Jasec Rangel. Contributions are welcome via pull requests.
