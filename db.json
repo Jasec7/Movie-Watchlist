@@ -34,6 +34,27 @@
         "year": "2019",
         "genre": "Action/Sci-Fi",
         "poster": "https://cdn.cdon.com/media-dynamic/images/product/movie/dvd/image1/avengers_endgame_sefi-47496385-.jpg"
+      },
+      {
+        "id": 6,
+        "title":
+        "year":
+        "genre":"genre"
+        "poster":
+      },
+      {
+        "id": 7,
+        "title":
+        "year":
+        "genre":"genre"
+        "poster":
+      },
+      {
+        "id": 8,
+        "title":
+        "year":
+        "genre":"genre"
+        "poster":
       }
     ]
   }
