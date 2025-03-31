@@ -37,24 +37,11 @@
       },
       {
         "id": 6,
-        "title":
-        "year":
-        "genre":"genre"
-        "poster":
-      },
-      {
-        "id": 7,
-        "title":
-        "year":
-        "genre":"genre"
-        "poster":
-      },
-      {
-        "id": 8,
-        "title":
-        "year":
-        "genre":"genre"
-        "poster":
+        "title": "Zoolander",
+        "year": "2001",
+        "genre":"Comedy",
+        "poster":"https://flxt.tmsimg.com/assets/p28447_p_v10_ad.jpg"
       }
+      
     ]
   }
