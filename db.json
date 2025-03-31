@@ -48,6 +48,13 @@
         "year": "2013",
         "genre": "Action/Horror/Adventure",
         "poster": "https://image.tmdb.org/t/p/original/qbTb7CIQlsjnsd0ixcRLw7bOAhe.jpg"
+      },
+      {
+        "id": 8,
+        "title": "The Martian",
+        "year": "2015",
+        "genre": "Sci-Fi/Drama/Adventure",
+        "poster": "https://www.scifinow.co.uk/wp-content/uploads/2015/08/The-Martian-Launch-One-Sheet.jpg"
       }
     ]
   }
