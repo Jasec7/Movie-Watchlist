@@ -22,7 +22,7 @@ fetch('http://localhost:3000/movies')
     const searchTerm = e.target.value.toLowerCase();
 
     const filteredMovies = allMovies.filter(movie => 
-     movie.title.toLowerCase().startsWith(searchTerm));
+     movie.title.toLowerCase().includes(searchTerm));
      renderMovies(filteredMovies);
   });
 
