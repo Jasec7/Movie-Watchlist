@@ -41,7 +41,13 @@
         "year": "2001",
         "genre":"Comedy",
         "poster":"https://flxt.tmsimg.com/assets/p28447_p_v10_ad.jpg"
+      },
+      {
+        "id": 7,
+        "title": "World War Z",
+        "year": "2013",
+        "genre": "Action/Horror/Adventure",
+        "poster": "https://image.tmdb.org/t/p/original/qbTb7CIQlsjnsd0ixcRLw7bOAhe.jpg"
       }
-      
     ]
   }
